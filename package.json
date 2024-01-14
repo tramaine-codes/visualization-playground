@@ -9,11 +9,11 @@
     "likec4:build:dev": "npx likec4 build -o ./likec4/dist ./likec4",
     "likec4:preview": "npm run likec4:build:dev && npx likec4 preview -o ./likec4/dist ./likec4",
     "likec4:start": "npx likec4 start ./likec4",
-    "predeploy" : "npm run likec4:build",
     "mermaid:build": "tsc -p ./mermaid && vite -c ./mermaid/vite.config.ts build",
     "mermaid:markdown": "mmdc -i ./mermaid/markdown/diagrams.template.md -o ./mermaid/markdown/diagrams.md -t dark -b '#242424'",
     "mermaid:preview": "npm run mermaid:build && vite -c ./mermaid/vite.config.ts preview",
-    "mermaid:start": "vite -c ./mermaid/vite.config.ts"
+    "mermaid:start": "vite -c ./mermaid/vite.config.ts",
+    "predeploy" : "npm run likec4:build"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.6.1",
