@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "likec4:build": "npx likec4 build ./src/likec4",
-    "likec4:preview": "npm run likec4:build && npx likec4 preview ./src/likec4 dist",
+    "likec4:build": "npx likec4 build -o ./docs ./src/likec4",
+    "likec4:preview": "npm run likec4:build && npx likec4 preview -o ./docs ./src/likec4",
     "likec4:start": "npx likec4 start ./src/likec4",
     "mermaid:dev": "vite -c ./src/mermaid/vite.config.ts",
     "mermaid:build": "tsc && vite build",
