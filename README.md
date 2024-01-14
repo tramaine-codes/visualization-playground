@@ -1,7 +1,7 @@
 # Visualization Playground
 
 A playground for exploring visualization tooling. The diagrams that follow are
-examples that were produced by Mermaid.
+examples that were produced by [Mermaid](https://mermaid.js.org/).
 
 ## Sequence Diagrams
 
