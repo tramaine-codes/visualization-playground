@@ -4,15 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "deploy" : "gh-pages -d ./dist/likec4",
-    "likec4:build": "npx likec4 build --base visualization-playground -o ./dist/likec4 ./src/likec4",
-    "likec4:preview": "npm run likec4:build && npx likec4 preview -o ./dist/likec4 ./src/likec4",
-    "likec4:start": "npx likec4 start ./src/likec4",
+    "deploy" : "gh-pages -d ./likec4/dist",
+    "likec4:build": "npx likec4 build --base visualization-playground -o ./likec4/dist ./likec4",
+    "likec4:build:dev": "npx likec4 build -o ./likec4/dist ./likec4",
+    "likec4:preview": "npm run likec4:build:dev && npx likec4 preview -o ./likec4/dist ./likec4",
+    "likec4:start": "npx likec4 start ./likec4",
     "predeploy" : "npm run likec4:build",
-    "mermaid:dev": "vite -c ./src/mermaid/vite.config.ts",
-    "mermaid:build": "tsc && vite build",
-    "mermaid:markdown": "mmdc -i ./src/mermaid/markdown/diagrams.template.md -o ./src/mermaid/markdown/diagrams.md -t dark -b '#242424'",
-    "mermaid:preview": "vite preview"
+    "mermaid:build": "tsc -p ./mermaid && vite -c ./mermaid/vite.config.ts build",
+    "mermaid:markdown": "mmdc -i ./mermaid/markdown/diagrams.template.md -o ./mermaid/markdown/diagrams.md -t dark -b '#242424'",
+    "mermaid:preview": "npm run mermaid:build && vite -c ./mermaid/vite.config.ts preview",
+    "mermaid:start": "vite -c ./mermaid/vite.config.ts"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.6.1",
