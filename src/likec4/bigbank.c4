@@ -4,7 +4,6 @@ model {
   }
  
   bigbank = enterprise "Big Bank plc" {
- 
     supportStaff = person "Customer Service Staff" {
       description: "Customer service staff within the bank."
     }
@@ -15,6 +14,7 @@ model {
  
     mainframe = softwaresystem "Mainframe Banking System" {
       description: "Stores all of the core banking information about customers, accounts, transactions, etc."
+
       style {
         color: secondary
       }
@@ -22,6 +22,7 @@ model {
  
     email = softwaresystem "E-mail System" {
       description: "The internal Microsoft Exchange e-mail system."
+
       style {
         color: muted
       }
@@ -37,21 +38,26 @@ model {
       singlePageApplication = container "Single-Page Application" {
         description: "Provides all of the Internet banking functionality to customers via their web browser."
         technology: "JavaScript and Angular"
+
         style {
           shape browser
         }
       }
+
       mobileApp = container "Mobile App" {
         description: "Provides a limited subset of the Internet banking functionality to customers via their mobile device."
         technology: "Xamarin"
+
         style {
           shape mobile
         }
       }
+
       webApplication = container "Web Application" {
         description: "Delivers the static content and the Internet banking single page application."
         technology: "Java and Spring MVC"
       }
+
       apiApplication = container "API Application" {
         description: "Provides Internet banking functionality via a JSON/HTTPS API."
         technology: "Java and Spring MVC"
@@ -65,24 +71,28 @@ model {
           description: "Provides customers with a summary of their bank accounts."
           technology: "Spring MVC Rest Controller"
         }
+
         resetPasswordController = component "Reset Password Controller" {
           description: "Allows users to reset their passwords with a single use URL."
           technology: "Spring MVC Rest Controller"
         }
+
         securityComponent = component "Security Component" {
           description: "Provides functionality related to signing in, changing passwords, etc."
           technology: "Spring Bean"
         }
+
         mainframeBankingSystemFacade = component "Mainframe Banking System Facade" {
           description: "A facade onto the mainframe banking system."
           technology: "Spring Bean"
         }
+
         emailComponent = component "E-mail Component"{
           description:  "Sends e-mails to users."
           technology: "Spring Bean"
         }
- 
       }
+
       database = database "Database" {
         description: "Stores user registration information, hashed authentication credentials, access logs, etc."
         technology: "Oracle Database Schema"
@@ -124,21 +134,24 @@ model {
 }
  
 views {
- 
   view index of bigbank {
     title "Big Bank - Landscape"
+    description "The Landscape diagram of the Big Bank plc Internet Banking System."
+
     include *
   }
  
   view context of bigbank {
     title "Internet Banking System - SystemContext"
+    description "The System Context diagram for the Internet Banking System."
+
     include
       bigbank,
       mainframe,
       internetBankingSystem,
       email,
       customer
- 
+
     style * {
       color secondary
     }
@@ -149,19 +162,39 @@ views {
  
   view ibsContainers of internetBankingSystem {
     title "Internet Banking System - Containers"
- 
+    description "The Containers diagram for the Internet Banking System."
+
     include
       *,
       -> customer
   }
+
+   view apiApp of internetBankingSystem.apiApplication {
+    title "API Application - Components"
+    description "The Components diagram for the API Application."
+
+    include *
+
+    style * {
+      color muted
+    }
+    style singlePageApplication, mobileApp {
+      color secondary
+    }
+    style apiApplication, apiApplication.* {
+      color primary
+    }
+  }
  
   view customer of customer {
+    description "Customer interactions."
+
     include
       *,
       customer -> internetBankingSystem.*,
       customer -> bigbank.*
     exclude webApplication
- 
+
     style bigbank {
       color muted
     }
@@ -170,77 +203,12 @@ views {
     }
   }
  
-  view spa of singlePageApplication {
-    include
-      *,
-      apiApplication,
-      internetBankingSystem,
-      -> singlePageApplication ->
- 
-    style * {
-      color secondary
-    }
-    style internetBankingSystem {
-      color muted
-    }
-    style singlePageApplication {
-      color green
-    }
-  }
- 
   view support of supportStaff {
+    description "Support staff interactions."
+
     include
       *,
       bigbank,
       -> backoffice ->
-  }
- 
-  view apiApp of internetBankingSystem.apiApplication {
-    title "API Application - Components"
- 
-    include *
- 
-    style * {
-      color muted
-    }
- 
-    style singlePageApplication, mobileApp {
-      color secondary
-    }
- 
-    style apiApplication, apiApplication.* {
-      color primary
-    }
-  }
- 
-  view webapp of webApplication {
-    include
-      *,
-      internetBankingSystem,
-      bigbank
- 
-    style bigbank {
-      color muted
-    }
-  }
- 
-  view mobileApp of mobileApp {
-    include
-      *,
-      internetBankingSystem,
-      internetBankingSystem.apiApplication,
-      mobileApp -> internetBankingSystem.apiApplication.*
- 
-    style * {
-      color secondary
-    }
- 
-    style apiApplication, internetBankingSystem {
-      color muted
-    }
- 
-    style mobileApp {
-      color green
-    }
   }
 }
