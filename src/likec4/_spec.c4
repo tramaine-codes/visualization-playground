@@ -3,7 +3,7 @@ specification {
   element softwaresystem
   element container
   element component
- 
+
   element person {
     style {
       color secondary

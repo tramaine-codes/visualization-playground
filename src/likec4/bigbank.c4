@@ -108,18 +108,18 @@ model {
   webApplication -> singlePageApplication "Delivers to the customer's web browser"
  
   // relationships to/from components
-  singlePageApplication -> signinController "Makes API calls to"
-  singlePageApplication -> accountsSummaryController "Makes API calls to"
-  singlePageApplication -> resetPasswordController "Makes API calls to"
-  mobileApp -> signinController "Makes API calls to"
-  mobileApp -> accountsSummaryController "Makes API calls to"
-  mobileApp -> resetPasswordController "Makes API calls to"
+  singlePageApplication -> signinController "Makes API calls to\r\n[JSON/HTTPS]"
+  singlePageApplication -> accountsSummaryController "Makes API calls to\r\n[JSON/HTTPS]"
+  singlePageApplication -> resetPasswordController "Makes API calls to\r\n[JSON/HTTPS]"
+  mobileApp -> signinController "Makes API calls to\r\n[JSON/HTTPS]"
+  mobileApp -> accountsSummaryController "Makes API calls to\r\n[JSON/HTTPS]"
+  mobileApp -> resetPasswordController "Makes API calls to\r\n[JSON/HTTPS]"
   signinController -> securityComponent "Uses"
   accountsSummaryController -> mainframeBankingSystemFacade "Uses"
   resetPasswordController -> securityComponent "Uses"
   resetPasswordController -> emailComponent "Uses"
-  securityComponent -> database "Reads from and writes to"
-  mainframeBankingSystemFacade -> mainframe "Makes API calls to"
+  securityComponent -> database "Reads from and writes to\r\n[SQL/TCPS]"
+  mainframeBankingSystemFacade -> mainframe "Makes API calls to\r\n[JSON/HTTPS]"
   emailComponent -> email "Sends e-mail using"
 }
  
