@@ -1,7 +1,10 @@
 # Visualization Playground
 
-A playground for exploring visualization tooling. The diagrams that follow are
-examples produced by [Mermaid](https://mermaid.js.org/).
+A playground for exploring visualization tooling.
+
+* Diagrams produced by [LikeC4](https://likec4.dev/) are hosted [here](https://tgillus.github.io/visualization-playground/).
+* The diagrams that follow are examples produced by [Mermaid](https://mermaid.js.org/).
+
 
 ## Sequence Diagrams
 
