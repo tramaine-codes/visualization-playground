@@ -1,33 +1,21 @@
 specification {
-
-  element actor {
-    style {
-      shape person
-      color secondary
-    }
-  }
-
-  element system  
+  element enterprise
+  element softwaresystem
+  element container
   element component
-  element service
-  element webapp {
+ 
+  element person {
     style {
-      shape browser
+      color secondary
+      shape person
     }
   }
-  element mobile {
-    style {
-      shape mobile
-    }
-  }
+ 
+  // Structurizr does not have a database element
+  // Just for the sake of the example
   element database {
     style {
       shape storage
     }
   }
-  element db_table {
-    style {
-      shape storage
-    }
-  }  
 }
