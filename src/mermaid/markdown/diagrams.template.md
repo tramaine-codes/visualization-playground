@@ -37,7 +37,7 @@ erDiagram
   PRODUCT ||--o{ ORDER-ITEM : "ordered in"
 ```
 
-## Gitgraph Diagram
+## Gitgraph Diagrams
 
 ```mermaid
 ---
