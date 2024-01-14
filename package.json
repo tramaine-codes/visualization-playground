@@ -1,0 +1,24 @@
+{
+  "name": "visualization",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "likec4:build": "npx likec4 build ./src/likec4",
+    "likec4:preview": "npm run likec4:build && npx likec4 preview ./src/likec4 dist",
+    "likec4:start": "npx likec4 start ./src/likec4",
+    "mermaid:dev": "vite -c ./src/mermaid/vite.config.ts",
+    "mermaid:build": "tsc && vite build",
+    "mermaid:markdown": "mmdc -i ./src/mermaid/markdown/diagrams.template.md -o ./src/mermaid/markdown/diagrams.md -t dark -b '#242424'",
+    "mermaid:preview": "vite preview"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^10.6.1",
+    "likec4": "0.54.0",
+    "typescript": "5.2.2",
+    "vite": "5.0.8"
+  },
+  "dependencies": {
+    "mermaid": "10.6.1"
+  }
+}
