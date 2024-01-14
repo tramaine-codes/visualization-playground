@@ -4,22 +4,33 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "deploy" : "gh-pages -d ./likec4/dist",
+    "deploy": "gh-pages -d ./likec4/dist",
+    "format": "prettier . --write",
     "likec4:build": "npx likec4 build --base visualization-playground -o ./likec4/dist ./likec4",
     "likec4:build:dev": "npx likec4 build -o ./likec4/dist ./likec4",
     "likec4:preview": "npm run likec4:build:dev && npx likec4 preview -o ./likec4/dist ./likec4",
     "likec4:start": "npx likec4 start ./likec4",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
     "mermaid:build": "tsc -p ./mermaid && vite -c ./mermaid/vite.config.ts build",
     "mermaid:markdown": "mmdc -i ./mermaid/markdown/diagrams.template.md -o ./mermaid/markdown/diagrams.md -t dark -b '#242424'",
     "mermaid:preview": "npm run mermaid:build && vite -c ./mermaid/vite.config.ts preview",
     "mermaid:start": "vite -c ./mermaid/vite.config.ts",
-    "predeploy" : "npm run likec4:build"
+    "predeploy": "npm run likec4:build",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "18.4.4",
+    "@commitlint/config-conventional": "18.4.4",
     "@mermaid-js/mermaid-cli": "10.6.1",
+    "@typescript-eslint/eslint-plugin": "6.18.1",
+    "@typescript-eslint/parser": "6.18.1",
+    "eslint": "8.56.0",
     "gh-pages": "6.1.1",
+    "husky": "8.0.3",
     "likec4": "0.54.0",
-    "typescript": "5.2.2",
+    "prettier": "3.2.2",
+    "typescript": "5.3.3",
     "vite": "5.0.8"
   },
   "dependencies": {

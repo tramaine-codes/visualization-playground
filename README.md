@@ -2,9 +2,8 @@
 
 A playground for exploring visualization tooling.
 
-* Example diagrams produced by [LikeC4](https://likec4.dev/) are hosted [here](https://tgillus.github.io/visualization-playground/).
-* The example diagrams that follow are produced by [Mermaid](https://mermaid.js.org/).
-
+- Example diagrams produced by [LikeC4](https://likec4.dev/) are hosted [here](https://tgillus.github.io/visualization-playground/).
+- The example diagrams that follow are produced by [Mermaid](https://mermaid.js.org/).
 
 ## Sequence Diagrams
 
@@ -23,4 +22,3 @@ A playground for exploring visualization tooling.
 ## Gantt Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-5.svg)
-
