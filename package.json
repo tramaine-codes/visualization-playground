@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "deploy" : "gh-pages -d ./dist/likec4",
-    "likec4:build": "npx likec4 build -o ./dist/likec4 ./src/likec4",
+    "likec4:build": "npx likec4 build --base visualization-playground -o ./dist/likec4 ./src/likec4",
     "likec4:preview": "npm run likec4:build && npx likec4 preview -o ./dist/likec4 ./src/likec4",
     "likec4:start": "npx likec4 start ./src/likec4",
     "predeploy" : "npm run likec4:build",
