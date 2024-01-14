@@ -1,24 +1,23 @@
 # Visualization Playground
 
-A playground for exploring visualization tooling.
+A playground for exploring visualization tooling. The diagrams that follow are
+examples that were produced by Mermaid.
 
-## Example Mermaid Diagrams
-
-### Sequence Diagrams
+## Sequence Diagrams
 
 ![diagram](./src/mermaid/markdown/diagrams-1.svg)
 
-### ER Diagrams
+## ER Diagrams
 
 ![diagram](./src/mermaid/markdown/diagrams-2.svg)
 
-### Gitgraph Diagrams
+## Gitgraph Diagrams
 
 ![diagram](./src/mermaid/markdown/diagrams-3.svg)
 
 ![diagram](./src/mermaid/markdown/diagrams-4.svg)
 
-### Gantt Diagrams
+## Gantt Diagrams
 
 ![diagram](./src/mermaid/markdown/diagrams-5.svg)
 
