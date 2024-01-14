@@ -10,7 +10,7 @@ Examples of Mermaid diagrams.
 
 ![diagram](./diagrams-2.svg)
 
-## Gitgraph Diagram
+## Gitgraph Diagrams
 
 ![diagram](./diagrams-3.svg)
 

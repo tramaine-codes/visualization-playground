@@ -60,7 +60,6 @@ gitGraph:
 ---
 title: Git History
 ---
-%%{init: { 'logLevel': 'debug', 'theme': 'dark' } }%%
 gitGraph TB:
   commit
   branch hotfix
