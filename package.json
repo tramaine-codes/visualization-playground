@@ -35,6 +35,7 @@
     "vite": "5.0.11"
   },
   "dependencies": {
+    "gojs": "2.3.13",
     "mermaid": "10.7.0"
   }
 }
