@@ -142,6 +142,9 @@ gantt
 ## C4 Diagrams
 
 ```mermaid
+---
+title: System Landscape
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -181,6 +184,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: System Context
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -209,6 +215,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: Containers
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -251,6 +260,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: Components
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -302,6 +314,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: Dynamic - Signin
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -332,6 +347,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: Deployment - Development
+---
 graph TB
   linkStyle default fill:#ffffff
 
@@ -396,6 +414,9 @@ graph TB
 ```
 
 ```mermaid
+---
+title: Deployment - Live
+---
 graph TB
   linkStyle default fill:#ffffff
 
