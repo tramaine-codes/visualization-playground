@@ -19,3 +19,19 @@ Examples of Mermaid diagrams.
 ## Gantt Diagrams
 
 ![diagram](./diagrams-5.svg)
+
+## C4 Diagrams
+
+![diagram](./diagrams-6.svg)
+
+![diagram](./diagrams-7.svg)
+
+![diagram](./diagrams-8.svg)
+
+![diagram](./diagrams-9.svg)
+
+![diagram](./diagrams-10.svg)
+
+![diagram](./diagrams-11.svg)
+
+![diagram](./diagrams-12.svg)
