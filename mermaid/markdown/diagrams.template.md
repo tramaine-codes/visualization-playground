@@ -148,50 +148,43 @@ title: System Landscape
 graph TB
   linkStyle default fill:#ffffff
 
-  subgraph diagram ["System Landscape"]
-    style diagram fill:#242424
+  subgraph group1 [Big Bank plc]
+    style group1 fill:#242424,color:#cccccc,stroke-dasharray:5
 
-    subgraph group1 [Big Bank plc]
-      style group1 fill:#242424,color:#cccccc,stroke-dasharray:5
-
-      2["<div style='font-weight: bold'>Customer Service Staff</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Customer service staff within<br />the bank.</div>"]
-      style 2 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
-      3["<div style='font-weight: bold'>Back Office Staff</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Administration and support<br />staff within the bank.</div>"]
-      style 3 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
-      4["<div style='font-weight: bold'>Mainframe Banking System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Stores all of the core<br />banking information about<br />customers, accounts,<br />transactions, etc.</div>"]
-      style 4 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
-      5["<div style='font-weight: bold'>E-mail System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>The internal Microsoft<br />Exchange e-mail system.</div>"]
-      style 5 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
-      6["<div style='font-weight: bold'>ATM</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows customers to withdraw<br />cash.</div>"]
-      style 6 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
-      7["<div style='font-weight: bold'>Internet Banking System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows customers to view<br />information about their bank<br />accounts, and make payments.</div>"]
-      style 7 fill:#0858A7,stroke:#0858A7,color:#ffffff
-    end
-
-    1["<div style='font-weight: bold'>Personal Banking Customer</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>A customer of the bank, with<br />personal bank accounts.</div>"]
-    style 1 fill:#015848,stroke:#015848,color:#ffffff
-
-    1-. "<div>Views account balances, and<br />makes payments using</div><div style='font-size: 70%'></div>" .->7
-    7-. "<div>Gets account information<br />from, and makes payments<br />using</div><div style='font-size: 70%'></div>" .->4
-    7-. "<div>Sends e-mail using</div><div style='font-size: 70%'></div>" .->5
-    5-. "<div>Sends e-mails to</div><div style='font-size: 70%'></div>" .->1
-    1-. "<div>Asks questions to</div><div style='font-size: 70%'>[Telephone]</div>" .->2
-    2-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
-    1-. "<div>Withdraws cash using</div><div style='font-size: 70%'></div>" .->6
-    6-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
-    3-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
+    2["<div style='font-weight: bold'>Customer Service Staff</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Customer service staff within<br />the bank.</div>"]
+    style 2 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
+    3["<div style='font-weight: bold'>Back Office Staff</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Administration and support<br />staff within the bank.</div>"]
+    style 3 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
+    4["<div style='font-weight: bold'>Mainframe Banking System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Stores all of the core<br />banking information about<br />customers, accounts,<br />transactions, etc.</div>"]
+    style 4 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
+    5["<div style='font-weight: bold'>E-mail System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>The internal Microsoft<br />Exchange e-mail system.</div>"]
+    style 5 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
+    6["<div style='font-weight: bold'>ATM</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows customers to withdraw<br />cash.</div>"]
+    style 6 fill:#7D7B7B,stroke:#7D7B7B,color:#ffffff
+    7["<div style='font-weight: bold'>Internet Banking System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows customers to view<br />information about their bank<br />accounts, and make payments.</div>"]
+    style 7 fill:#0858A7,stroke:#0858A7,color:#ffffff
   end
+
+  1["<div style='font-weight: bold'>Personal Banking Customer</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>A customer of the bank, with<br />personal bank accounts.</div>"]
+  style 1 fill:#015848,stroke:#015848,color:#ffffff
+
+  1-. "<div>Views account balances, and<br />makes payments using</div><div style='font-size: 70%'></div>" .->7
+  7-. "<div>Gets account information<br />from, and makes payments<br />using</div><div style='font-size: 70%'></div>" .->4
+  7-. "<div>Sends e-mail using</div><div style='font-size: 70%'></div>" .->5
+  5-. "<div>Sends e-mails to</div><div style='font-size: 70%'></div>" .->1
+  1-. "<div>Asks questions to</div><div style='font-size: 70%'>[Telephone]</div>" .->2
+  2-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
+  1-. "<div>Withdraws cash using</div><div style='font-size: 70%'></div>" .->6
+  6-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
+  3-. "<div>Uses</div><div style='font-size: 70%'></div>" .->4
 ```
 
 ```mermaid
 ---
-title: System Context
+title: Internet Banking System - System Context
 ---
-graph TB
+graph LR
   linkStyle default fill:#ffffff
-
-  subgraph diagram ["Internet Banking System - System Context"]
-    style diagram fill:#242424
 
     subgraph group1 [Big Bank plc]
       style group1 fill:#242424,color:#cccccc,stroke-dasharray:5
@@ -211,7 +204,6 @@ graph TB
     7-. "<div>Gets account information<br />from, and makes payments<br />using</div><div style='font-size: 70%'></div>" .->4
     7-. "<div>Sends e-mail using</div><div style='font-size: 70%'></div>" .->5
     5-. "<div>Sends e-mails to</div><div style='font-size: 70%'></div>" .->1
-  end
 ```
 
 ```mermaid
