@@ -22,3 +22,19 @@ A playground for exploring visualization tooling.
 ## Gantt Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-5.svg)
+
+## C4 Diagrams
+
+![diagram](./mermaid/markdown/diagrams-6.svg)
+
+![diagram](./mermaid/markdown/diagrams-7.svg)
+
+![diagram](./mermaid/markdown/diagrams-8.svg)
+
+![diagram](./mermaid/markdown/diagrams-9.svg)
+
+![diagram](./mermaid/markdown/diagrams-10.svg)
+
+![diagram](./mermaid/markdown/diagrams-11.svg)
+
+![diagram](./mermaid/markdown/diagrams-12.svg)
