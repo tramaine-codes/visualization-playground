@@ -6,23 +6,23 @@ Examples of Mermaid diagrams.
 
 ![diagram](./diagrams-1.svg)
 
-## ER Diagrams
-
 ![diagram](./diagrams-2.svg)
 
-## Gitgraph Diagrams
+## ER Diagrams
 
 ![diagram](./diagrams-3.svg)
 
-![diagram](./diagrams-4.svg)
+## Gitgraph Diagrams
 
-## Gantt Diagrams
+![diagram](./diagrams-4.svg)
 
 ![diagram](./diagrams-5.svg)
 
-## C4 Diagrams
+## Gantt Diagrams
 
 ![diagram](./diagrams-6.svg)
+
+## C4 Diagrams
 
 ![diagram](./diagrams-7.svg)
 
@@ -35,3 +35,5 @@ Examples of Mermaid diagrams.
 ![diagram](./diagrams-11.svg)
 
 ![diagram](./diagrams-12.svg)
+
+![diagram](./diagrams-13.svg)

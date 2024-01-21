@@ -9,15 +9,60 @@ Examples of Mermaid diagrams.
 title: Three-Party Conversation
 ---
 sequenceDiagram
-    autonumber
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-      John->>John: Fight against hypochondria
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+```mermaid
+---
+title: API Request
+---
+sequenceDiagram
+  autonumber
+  participant API Client
+  participant Secure Token Service
+  box API
+    participant API Gateway
+    participant Lambda Authorizer
+    participant DynamoDB
+    participant Lambda Backend
+  end
+  opt no active access token
+    API Client->>Secure Token Service: Request access token
+    Secure Token Service-->>API Client: Return access token
+  end
+  API Client->>API Gateway: Send request with access token
+  opt no cached policy for access token
+    API Gateway->>Lambda Authorizer: Forward access token
+    Lambda Authorizer->>Secure Token Service: Request access token introspection
+    Secure Token Service-->>Lambda Authorizer: Return introspection response
+    alt inactive token
+      Lambda Authorizer->>API Gateway: Return deny policy
+    else active token
+      Lambda Authorizer->>DynamoDB: Retrieve API resources API client can access
+      DynamoDB->>Lambda Authorizer: Return accessible API resources
+      alt API client has accesses
+        Lambda Authorizer-->>API Gateway: Return allow policy with accessible API resources
+      else API client has no accesses
+        Lambda Authorizer-->>API Gateway: Return deny policy
+      end
+      API Gateway-->>API Gateway: Cache policy for access token
     end
-    Note right of John: Rational thoughts!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+  end
+  alt deny policy
+    API Gateway->>API Client: Return 403 HTTP status
+  else allow policy
+    API Gateway->>Lambda Backend: Forward request
+    Lambda Backend-->>API Gateway: Return HTTP response
+    API Gateway-->>API Client: Return HTTP response
+  end
 ```
 
 ## ER Diagrams
