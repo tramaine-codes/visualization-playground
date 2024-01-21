@@ -80,6 +80,28 @@ sequenceDiagram
   end
 ```
 
+## Flowchart Diagrams
+
+```mermaid
+---
+title: API Consumer Authorization Process
+---
+flowchart TB
+  start(API resource request) --> d1{Token<br />present?}
+  d1 -->|No| end1(Deny access)
+  d1 -->|Yes| s1[Token introspection]
+  s1 --> d2{Active<br />token?}
+  d2 -->|No| end1
+  d2 -->|Yes| s2[Retrieve consumer resource accesses]
+  s2 --> d3{Has <br />accesses?}
+  d3 -->|No| end1
+  d3 -->|Yes| d4{Access to<br />requested<br />resource?}
+  d4 -->|No| end1
+  d4 -->|Yes| end2(Allow access)
+  end1
+  end2
+```
+
 ## ER Diagrams
 
 ```mermaid

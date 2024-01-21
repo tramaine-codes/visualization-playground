@@ -11,23 +11,25 @@ A playground for exploring visualization tooling.
 
 ![diagram](./mermaid/markdown/diagrams-2.svg)
 
-## ER Diagrams
+## Flowchart Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-3.svg)
 
-## Gitgraph Diagrams
+## ER Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-4.svg)
 
-![diagram](./mermaid/markdown/diagrams-5.svg)
+## Gitgraph Diagrams
 
-## Gantt Diagrams
+![diagram](./mermaid/markdown/diagrams-5.svg)
 
 ![diagram](./mermaid/markdown/diagrams-6.svg)
 
-## C4 Diagrams
+## Gantt Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-7.svg)
+
+## C4 Diagrams
 
 ![diagram](./mermaid/markdown/diagrams-8.svg)
 
@@ -40,3 +42,5 @@ A playground for exploring visualization tooling.
 ![diagram](./mermaid/markdown/diagrams-12.svg)
 
 ![diagram](./mermaid/markdown/diagrams-13.svg)
+
+![diagram](./mermaid/markdown/diagrams-14.svg)
