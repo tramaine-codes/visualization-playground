@@ -6,62 +6,77 @@ Examples of Mermaid diagrams.
 
 ```mermaid
 ---
-title: Three-Party Conversation
----
-sequenceDiagram
-  autonumber
-  Alice->>John: Hello John, how are you?
-  loop Healthcheck
-    John->>John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts!
-  John-->>Alice: Great!
-  John->>Bob: How about you?
-  Bob-->>John: Jolly good!
-```
-
-```mermaid
----
 title: API Request
 ---
 sequenceDiagram
   autonumber
-  participant API Client
+  opt no active access token
+    API Consumer->>Secure Token Service: Request access token
+    Secure Token Service-->>API Consumer: Access token
+    Note over API Consumer: Cache access token
+  end
+  API Consumer->>API: Send request with access token
+  opt no cached authorization decision
+    API->>Secure Token Service: Validate access token
+    Secure Token Service-->>API: Validation response
+    Note over API: Perform authorization and<br />cache authorization decision
+  end
+  alt authorization denied
+    API-->>API Consumer: 403 HTTP response
+  else authorization granted
+    Note over API: Process request
+    API-->>API Consumer: HTTP response
+  end
+```
+
+```mermaid
+---
+title: API Request Detailed
+---
+sequenceDiagram
+  autonumber
+  participant API Consumer
   participant Secure Token Service
   box API
-    participant API Gateway
-    participant Lambda Authorizer
-    participant DynamoDB
-    participant Lambda Backend
+    participant AWS API Gateway
+    participant AWS Lambda Authorizer
+    participant AWS DynamoDB
+    participant AWS Lambda Backend
   end
   opt no active access token
-    API Client->>Secure Token Service: Request access token
-    Secure Token Service-->>API Client: Return access token
+    API Consumer->>Secure Token Service: Request access token
+    Secure Token Service-->>API Consumer: Access token
+    Note over API Consumer: Cache access token
   end
-  API Client->>API Gateway: Send request with access token
-  opt no cached policy for access token
-    API Gateway->>Lambda Authorizer: Forward access token
-    Lambda Authorizer->>Secure Token Service: Request access token introspection
-    Secure Token Service-->>Lambda Authorizer: Return introspection response
+  API Consumer->>AWS API Gateway: Send request with access token
+  opt no cached authorization policy for access token
+    AWS API Gateway->>AWS Lambda Authorizer: Forward request with access token
+    AWS Lambda Authorizer->>Secure Token Service: Request access token introspection
+    Secure Token Service-->>AWS Lambda Authorizer: Introspection response
     alt inactive token
-      Lambda Authorizer->>API Gateway: Return deny policy
+      AWS Lambda Authorizer-->>AWS API Gateway: Deny AWS IAM policy
     else active token
-      Lambda Authorizer->>DynamoDB: Retrieve API resources API client can access
-      DynamoDB->>Lambda Authorizer: Return accessible API resources
-      alt API client has accesses
-        Lambda Authorizer-->>API Gateway: Return allow policy with accessible API resources
-      else API client has no accesses
-        Lambda Authorizer-->>API Gateway: Return deny policy
+      AWS Lambda Authorizer->>AWS DynamoDB: Retrieve API consumer accesses
+      AWS DynamoDB-->>AWS Lambda Authorizer: Accessible API resources
+      alt no accesses
+        AWS Lambda Authorizer-->>AWS API Gateway: Deny AWS IAM policy
+      else accesses
+        AWS Lambda Authorizer-->>AWS API Gateway: Allow AWS IAM policy for specific API resources
       end
-      API Gateway-->>API Gateway: Cache policy for access token
+      Note over AWS API Gateway: Cache policy
     end
   end
   alt deny policy
-    API Gateway->>API Client: Return 403 HTTP status
+    AWS API Gateway->>API Consumer: 403 HTTP status
   else allow policy
-    API Gateway->>Lambda Backend: Forward request
-    Lambda Backend-->>API Gateway: Return HTTP response
-    API Gateway-->>API Client: Return HTTP response
+    alt access to requested resource denied
+      AWS API Gateway->>API Consumer: Return 403 HTTP status
+    else access to requested resource granted
+      AWS API Gateway->>AWS Lambda Backend: Forward request
+      Note over AWS Lambda Backend: Process request
+      AWS Lambda Backend-->>AWS API Gateway: HTTP response
+      AWS API Gateway-->>API Consumer: HTTP response
+    end
   end
 ```
 
