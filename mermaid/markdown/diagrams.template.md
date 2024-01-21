@@ -19,8 +19,7 @@ sequenceDiagram
   opt no cached authorization decision
     API->>Secure Token Service: Validate access token
     Secure Token Service-->>API: Validation response
-    Note over API: Perform authorization
-    Note over API: Cache authorization decision
+    Note over API: Perform authorization<br />and cache decision
   end
   alt authorization denied
     API-->>API Consumer: 403 HTTP response
