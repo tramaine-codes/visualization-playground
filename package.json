@@ -28,7 +28,7 @@
     "eslint": "8.57.0",
     "gh-pages": "6.1.1",
     "husky": "9.0.11",
-    "likec4": "0.57.1",
+    "likec4": "0.60.0",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
     "typescript": "5.4.2",
