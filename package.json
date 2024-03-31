@@ -23,16 +23,16 @@
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
     "@mermaid-js/mermaid-cli": "10.8.0",
-    "@typescript-eslint/eslint-plugin": "7.3.1",
-    "@typescript-eslint/parser": "7.3.1",
+    "@typescript-eslint/eslint-plugin": "7.4.0",
+    "@typescript-eslint/parser": "7.4.0",
     "eslint": "8.57.0",
     "gh-pages": "6.1.1",
     "husky": "9.0.11",
-    "likec4": "0.60.0",
+    "likec4": "0.60.3",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
-    "typescript": "5.4.2",
-    "vite": "5.1.6"
+    "typescript": "5.4.3",
+    "vite": "5.2.7"
   },
   "dependencies": {
     "gojs": "2.3.16",
