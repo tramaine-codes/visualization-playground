@@ -22,7 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@mermaid-js/mermaid-cli": "10.8.0",
+    "@mermaid-js/mermaid-cli": "10.9.0",
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
     "eslint": "8.57.0",
@@ -35,7 +35,7 @@
     "vite": "5.2.11"
   },
   "dependencies": {
-    "gojs": "3.0.1",
+    "gojs": "3.0.2",
     "mermaid": "10.9.0"
   }
 }
