@@ -22,20 +22,20 @@
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@mermaid-js/mermaid-cli": "10.9.0",
-    "@typescript-eslint/eslint-plugin": "7.8.0",
-    "@typescript-eslint/parser": "7.8.0",
+    "@mermaid-js/mermaid-cli": "10.9.1",
+    "@typescript-eslint/eslint-plugin": "7.10.0",
+    "@typescript-eslint/parser": "7.10.0",
     "eslint": "8.57.0",
     "gh-pages": "6.1.1",
     "husky": "9.0.11",
-    "likec4": "0.60.4",
-    "lint-staged": "15.2.2",
+    "likec4": "1.1.1",
+    "lint-staged": "15.2.5",
     "prettier": "3.2.5",
     "typescript": "5.4.5",
     "vite": "5.2.11"
   },
   "dependencies": {
     "gojs": "3.0.2",
-    "mermaid": "10.9.0"
+    "mermaid": "10.9.1"
   }
 }
