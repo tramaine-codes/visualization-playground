@@ -1,22 +1,22 @@
 {
   "dependencies": {
-    "gojs": "3.0.10",
-    "mermaid": "10.9.1"
+    "gojs": "3.0.12",
+    "mermaid": "11.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.4.0",
-    "@commitlint/config-conventional": "19.2.2",
-    "@mermaid-js/mermaid-cli": "10.9.1",
-    "@typescript-eslint/eslint-plugin": "8.1.0",
-    "@typescript-eslint/parser": "8.1.0",
-    "eslint": "8.57.0",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
+    "@mermaid-js/mermaid-cli": "11.2.0",
+    "@typescript-eslint/eslint-plugin": "8.8.0",
+    "@typescript-eslint/parser": "8.8.0",
+    "eslint": "8.57.1",
     "gh-pages": "6.1.1",
-    "husky": "9.1.4",
-    "likec4": "1.7.4",
-    "lint-staged": "15.2.9",
+    "husky": "9.1.6",
+    "likec4": "1.11.0",
+    "lint-staged": "15.2.10",
     "prettier": "3.3.3",
-    "typescript": "5.5.4",
-    "vite": "5.4.1"
+    "typescript": "5.6.2",
+    "vite": "5.4.8"
   },
   "name": "visualization-playground",
   "private": true,
