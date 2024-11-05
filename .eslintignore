@@ -1,6 +1,0 @@
-coverage
-dist
-.husky
-lib
-node_modules
-tmp
