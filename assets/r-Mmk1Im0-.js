@@ -1,0 +1,1 @@
+import{j as o}from"./vendors-CacvH1B4.js";import{x as t,y as i}from"./i-AVMn4wIs.js";import"./likec4-DdR_39-7.js";import"./e-D6R8HG4a.js";function s(){throw new Error("No projects overview available for this workspace: single project mode is enabled")}function j(){const e=t(),r=s();return o.jsx(i,{view:r,onNavigateToProject:e})}export{j as ProjectsOverviewPage};
